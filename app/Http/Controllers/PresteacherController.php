@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Exports\ExportPersonal;
 use App\Exports\ExportPresent;
+use App\Models\Kelas;
 use App\Models\Present;
 use App\Models\Subject;
 use App\Models\Teacher;
@@ -34,8 +35,9 @@ class PresteacherController extends Controller
         $name = Auth::user()->name;
         $role = Auth::user()->role;
         $dataSubject = Subject::all();
+        $kelas = Kelas::all();
         // dd($name);
-        return view('presteacher.create', compact('name', 'role', 'dataSubject'));
+        return view('presteacher.create', compact('kelas','name', 'role', 'dataSubject'));
     }
 
     /**

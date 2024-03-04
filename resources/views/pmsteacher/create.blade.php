@@ -10,7 +10,7 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('present.index') }}">
+                <a class="nav-link collapsed" href="{{ route('presteacher.index') }}">
                     <i class="bi bi-book"></i>
                     <span>Presensi</span>
                 </a>
