@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('crumb', 'Izin Guru')
+@section('crumb', 'Kelas')
 @section('crumb1', 'Dashboard')
 @section('name', $name)
 @section('role', $role)
@@ -17,18 +17,19 @@
             </li><!-- End Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('present.index') }}">
+                <a class="nav-link " href="{{ route('present.index') }}">
                     <i class="bi bi-book"></i>
                     <span>Presensi</span>
                 </a>
             </li><!-- End Presensi Nav -->
 
             <li class="nav-item">
-                <a class="nav-link " href="{{ route('permission.index') }}">
+                <a class="nav-link collapsed" href="{{ route('permission.index') }}">
                     <i class="bi bi-envelope"></i>
                     <span>Izin Guru</span>
                 </a>
             </li><!-- End Presensi Nav -->
+
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ route('teacher.index') }}">
@@ -45,7 +46,7 @@
             </li><!-- End Mapel Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('classteacher.index') }}">
+                <a class="nav-link" href="{{ route('classteacher.index') }}">
                     <i class="bi bi-people"></i>
                     <span>Kelas</span>
                 </a>
@@ -66,20 +67,25 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <div class="row">
-                <div class="col-6">
-                    <h5 class="card-title">Data Izin Guru</h5>
-                </div>
-                <div class="col-6 d-flex justify-content-end align-items-center">
-                    {{-- <a href="{{ url('present/export/excel')}}" type="button" class="btn btn-warning text-small-on-mobile mx-3">Export</a> --}}
-                    <a href="{{ route('permission.create') }}" type="button" class="btn btn-primary text-small-on-mobile"><i class="bi bi-plus me-1 text-small-on-mobile"></i> Buat Izin</a>
-                    {{-- <a href="{{ route('present.search') }}" type="button" class="btn btn-success text-small-on-mobile"><i class="bi bi-plus me-1 text-small-on-mobile"></i> Import</a> --}}
-                </div>
-            </div>
+            <h5 class="card-title">General Form Elements</h5>
 
-            <!-- Table with stripped rows -->
-            @include('permission.table', $permissions)
-            <!-- End Table with stripped rows -->
+            <!-- General Form Elements -->
+            <form action="{{ route('classteacher.store') }}" method="post">
+                @csrf
+                <div class="row mb-3">
+                    <label for="inputText" class="col-sm-2 col-form-label">Nama Kelas</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="class_name" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-12 d-flex justify-content-end align-items-center">
+                        <button type="submit" class="btn btn-primary">Tambah Kelas</button>
+                    </div>
+                </div>
+
+            </form><!-- End General Form Elements -->
 
         </div>
     </div>

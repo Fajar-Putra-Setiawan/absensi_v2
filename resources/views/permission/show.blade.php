@@ -44,6 +44,13 @@
                 </a>
             </li><!-- End Mapel Nav -->
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('classteacher.index') }}">
+                    <i class="bi bi-people"></i>
+                    <span>Kelas</span>
+                </a>
+            </li><!-- End Mapel Nav -->
+
             <li class="nav-item hidden-on-desktop">
                 <a class="nav-link collapsed" href="{{ route('logout') }}">
                     <i class="bi bi-box-arrow-left"></i>

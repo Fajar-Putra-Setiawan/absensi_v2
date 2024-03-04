@@ -39,6 +39,13 @@
             </li><!-- End Guru Nav -->
 
             <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('classteacher.index') }}">
+                    <i class="bi bi-people"></i>
+                    <span>Kelas</span>
+                </a>
+            </li><!-- End Mapel Nav -->
+
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ route('subject.index') }}">
                     <i class="bi bi-people"></i>
                     <span>Mapel</span>

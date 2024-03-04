@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Exports\ExportPresent;
+use App\Models\Kelas;
 use App\Models\Present;
 use App\Models\Subject;
 use App\Models\Teacher;
@@ -33,8 +34,9 @@ class PresentController extends Controller
         $dataTeacher = Teacher::all();
         $name = Auth::user()->name;
         $role = Auth::user()->role;
+        $kelas = Kelas::all();
 
-        return view('present.create', compact('dataSubject', 'dataTeacher', 'name', 'role'));
+        return view('present.create', compact('dataSubject', 'kelas', 'dataTeacher', 'name', 'role'));
     }
 
     /**

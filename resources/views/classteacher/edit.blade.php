@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('crumb', 'Izin Guru')
+@section('crumb', 'Kelas')
 @section('crumb1', 'Dashboard')
 @section('name', $name)
 @section('role', $role)
@@ -24,7 +24,7 @@
             </li><!-- End Presensi Nav -->
 
             <li class="nav-item">
-                <a class="nav-link " href="{{ route('permission.index') }}">
+                <a class="nav-link collapsed" href="{{ route('permission.index') }}">
                     <i class="bi bi-envelope"></i>
                     <span>Izin Guru</span>
                 </a>
@@ -45,7 +45,7 @@
             </li><!-- End Mapel Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('classteacher.index') }}">
+                <a class="nav-link " href="{{ route('classteacher.index') }}">
                     <i class="bi bi-people"></i>
                     <span>Kelas</span>
                 </a>
@@ -66,20 +66,35 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <div class="row">
-                <div class="col-6">
-                    <h5 class="card-title">Data Izin Guru</h5>
+            <h5 class="card-title">General Form Elements</h5>
+
+            <!-- General Form Elements -->
+            <form action="{{ route('classteacher.update', $classDetail->id) }}" method="post">
+                @csrf
+                @method('put')
+                <div class="row mb-3">
+                    <label for="inputText" class="col-sm-2 col-form-label">Nama kelas</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="class_name" class="form-control" value="{{ $classDetail->class_name }}">
+                    </div>
                 </div>
-                <div class="col-6 d-flex justify-content-end align-items-center">
-                    {{-- <a href="{{ url('present/export/excel')}}" type="button" class="btn btn-warning text-small-on-mobile mx-3">Export</a> --}}
-                    <a href="{{ route('permission.create') }}" type="button" class="btn btn-primary text-small-on-mobile"><i class="bi bi-plus me-1 text-small-on-mobile"></i> Buat Izin</a>
-                    {{-- <a href="{{ route('present.search') }}" type="button" class="btn btn-success text-small-on-mobile"><i class="bi bi-plus me-1 text-small-on-mobile"></i> Import</a> --}}
+
+                <div class="row mb-3">
+                    <div class="col-12 d-flex justify-content-end align-items-center">
+                        <button type="submit" class="btn btn-primary">Edit Kelas</button>
+                    </div>
                 </div>
+
+            </form><!-- End General Form Elements -->
+
+            <div class="mb-3">
+                <form action="{{ route('classteacher.destroy', $classDetail->id) }}" method="post">
+                    @csrf
+                    @method('delete')
+                    <button href="{{route('classteacher.destroy', $classDetail->id)}}" type="submit" class="btn btn-danger">Hapus Mapel</button>
+                </form>
             </div>
 
-            <!-- Table with stripped rows -->
-            @include('permission.table', $permissions)
-            <!-- End Table with stripped rows -->
 
         </div>
     </div>
