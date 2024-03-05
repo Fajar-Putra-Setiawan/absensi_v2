@@ -136,38 +136,34 @@
 
                 </div><!-- End Customers Card -->
 
-                <div class="col-xxl-4 col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Daftar Izin Guru</h5>
 
-                    <div class="card info-card customers-card">
-                        <div class="card-body">
-                            <h5 class="card-title">Daftar Izin Guru</h5>
-
-                            <!-- Bordered Table -->
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Name</th>
-                                        <th scope="col" class="hidden-on-mobile">Keperluan</th>
-                                        <th scope="col">Tanggal</th>
-                                        <th scope="col" class="hidden-on-mobile">Izin</th>
-                                        <th scope="col">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($dataPms as $pms)
-                                    <tr>
-                                        <td>{{$pms->teacher_pms}}</td>
-                                        <td class="hidden-on-mobile">{{$pms->purpose_pms}}</td>
-                                        <td>{{$pms->date_pms}}</td>
-                                        <td class="hidden-on-mobile">{{$pms->subject_pms}}</td>
-                                        <td><a href="{{route('permission.show', $pms->id)}}" class="btn btn-warning text-small-on-mobile">Detail</a></td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                            <!-- End Bordered Table -->
-
-                        </div>
+                        <!-- Bordered Table -->
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col" class="hidden-on-mobile">Keperluan</th>
+                                    <th scope="col">Tanggal</th>
+                                    <th scope="col" class="hidden-on-mobile">Izin</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($dataPms as $pms)
+                                <tr>
+                                    <td>{{$pms->teacher_pms}}</td>
+                                    <td class="hidden-on-mobile">{{$pms->purpose_pms}}</td>
+                                    <td>{{$pms->date_pms}}</td>
+                                    <td class="hidden-on-mobile">{{$pms->subject_pms}}</td>
+                                    <td><a href="{{route('permission.show', $pms->id)}}" class="btn btn-warning text-small-on-mobile">Detail</a></td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        <!-- End Bordered Table -->
                     </div>
 
                 </div><!-- End Data Presensi tidak Cocok (awal) Card -->

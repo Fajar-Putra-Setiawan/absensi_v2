@@ -6,6 +6,8 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\PmsteacherController;
 use App\Http\Controllers\PresentController;
 use App\Http\Controllers\PresteacherController;
+use App\Http\Controllers\ProfileadminController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherController;
@@ -48,7 +50,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('presteacher', PresteacherController::class)->middleware('userAkses:guru');
     Route::Resource('pmsteacher', PmsteacherController::class)->middleware('userAkses:guru');
-
 
     Route::get('/logout', [SessionController::class, 'logout'])->name('logout');
 });
