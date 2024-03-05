@@ -77,7 +77,7 @@ class ClassController extends Controller
 
         $updateClass = Kelas::find($id);
         $response = $updateClass->update([
-            'class_name' => $request->name_subject,
+            'class_name' => $request->class_name,
         ]);
 
         if ($response) {
