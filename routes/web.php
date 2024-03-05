@@ -47,6 +47,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('permission', PermissionController::class)->middleware('userAkses:admin');
     Route::get('present/export/excel', [PresentController::class, 'exportpresent'])->middleware('userAkses:admin');
     Route::get('teacher/export/excel/{id}', [TeacherController::class, 'export'])->middleware('userAkses:admin');
+    Route::get('teacher/exportpms/{id}', [TeacherController::class, 'exportPms'])->middleware('userAkses:admin');
 
     Route::resource('presteacher', PresteacherController::class)->middleware('userAkses:guru');
     Route::Resource('pmsteacher', PmsteacherController::class)->middleware('userAkses:guru');
