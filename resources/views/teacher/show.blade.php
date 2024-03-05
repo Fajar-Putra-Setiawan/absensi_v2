@@ -71,7 +71,13 @@
                 <div class="col-6">
                     <h5 class="card-title">Data Detail Guru</h5>
                 </div>
+
+                <div class="col-6 d-flex justify-content-end align-items-center">
+                    <a href="{{ route('teacher.edit', $teacherDetail->id) }}" type="button" class="btn btn-primary"><i class="bi bi-plus me-1"></i> Edit</a>
+                </div>
             </div>
+
+
 
             <div class="mb-5">
                 <div class="row mb-3">

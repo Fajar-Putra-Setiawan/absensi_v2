@@ -46,7 +46,7 @@
 
             <li class="nav-item">
                 <a class="nav-link " href="{{ route('classteacher.index') }}">
-                    <i class="bi bi-people"></i>
+                    <i class="bi bi-bookmark-check"></i>
                     <span>Kelas</span>
                 </a>
             </li><!-- End Mapel Nav -->

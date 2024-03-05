@@ -47,7 +47,7 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('classteacher.index') }}">
-                    <i class="bi bi-people"></i>
+                    <i class="bi bi-bookmark-check"></i>
                     <span>Kelas</span>
                 </a>
             </li><!-- End Mapel Nav -->
@@ -67,7 +67,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">General Form Elements</h5>
+            <h5 class="card-title">Buat Kelas</h5>
 
             <!-- General Form Elements -->
             <form action="{{ route('classteacher.store') }}" method="post">
