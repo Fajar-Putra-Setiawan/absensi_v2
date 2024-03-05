@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ExportPermission;
 use App\Exports\ExportTeachpres;
 use App\Models\Permission;
 use App\Models\Present;
@@ -146,5 +147,10 @@ class TeacherController extends Controller
     public function export(string $id)
     {
         return Excel::download(new ExportTeachpres($id), 'teacher_report.xlsx');
+    }
+
+    public function exportPms(string $id)
+    {
+        return Excel::download(new ExportPermission($id), 'Izin Guru.xlsx');
     }
 }
